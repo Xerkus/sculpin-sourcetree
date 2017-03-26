@@ -1,0 +1,39 @@
+{
+  "name": "sculpin/sculpin-sourcetree",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksei Khudiakov",
+      "email": "aleksey@xerkus.pro"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "malukenho/docheader": "^0.1.5",
+    "phpstan/phpstan": "^0.6.4",
+    "phpunit/phpunit": "^6.0",
+    "squizlabs/php_codesniffer": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sculpin\\SourceTree\\": "src/"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@license-check",
+      "@cs-check",
+      "@phpstan",
+      "@test"
+    ],
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "license-check": "vendor/bin/docheader check src/ test/",
+    "phpstan": "phpstan analyse -l 4 src/",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpdbg -qrr vendor/bin/phpunit --coverage-clover clover.xml --coverage-text --colors=always"
+  }
+}

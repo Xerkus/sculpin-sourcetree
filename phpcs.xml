@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="Sculpin">
+ <description>PSR-2 based coding standard.</description>
+ <arg name="encoding" value="utf-8"/>
+ <arg name="colors"/>
+ <arg value="p"/>
+
+ <file>./src/</file>
+ <file>./test/</file>
+
+ <rule ref="PSR2"/>
+</ruleset>
